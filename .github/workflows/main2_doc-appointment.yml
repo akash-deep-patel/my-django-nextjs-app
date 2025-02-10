@@ -34,6 +34,10 @@ jobs:
           cd backend
           pip install --upgrade pip
           pip install -r requirements.txt
+      
+      
+      - name: Migrate Database
+        run: python manage.py migrate
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
