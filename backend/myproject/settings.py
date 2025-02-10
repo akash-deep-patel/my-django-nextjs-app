@@ -7,11 +7,22 @@ from django.core.management.utils import get_random_secret_key
 SECRET_KEY = get_random_secret_key()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / "db.sqlite3",
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'doc-appointment-server.postgres.database.azure.com',
+        'USER': 'emlfhhciqw',
+        'PASSWORD': '$DcHj4c9PNCZ4fbS',
+        'HOST': 'doc-appointment-server.postgres.database.azure.com',
+        'PORT': '',
+    },
 }
 
 INSTALLED_APPS = [
