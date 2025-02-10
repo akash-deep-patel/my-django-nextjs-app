@@ -1,31 +1,15 @@
 
 from django.http import JsonResponse
-
 from .models import Doctor, Patient, Appointment
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.shortcuts import render
 from django.shortcuts import render, redirect
-
 from django.http import JsonResponse
-
-import googleapiclient.discovery
 from django.conf import settings
 import msal
 import requests
 import os
-
-# def get_access_token():
-#     app = msal.ConfidentialClientApplication(
-#         CLIENT_ID,
-#         authority=AUTHORITY,
-#         client_credential=CLIENT_SECRET,
-#     )
-#     result = app.acquire_token_for_client(scopes=SCOPES)
-#     if 'access_token' in result:
-#         return result['access_token']
-#     else:
-#         raise Exception('Could not acquire access token')
 
 def home(request):
     return render(request, 'home.html')
