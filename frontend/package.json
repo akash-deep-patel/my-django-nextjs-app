@@ -1,0 +1,23 @@
+{
+  "name": "my-django-nextjs-app",
+  "version": "1.0.0",
+  "description": "A web application for scheduling doctor appointments with a Next.js frontend and Django backend.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^12.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-next": "^12.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
