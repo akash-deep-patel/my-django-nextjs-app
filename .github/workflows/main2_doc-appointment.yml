@@ -37,7 +37,9 @@ jobs:
       
       
       - name: Migrate Database
-        run: python manage.py migrate
+        run: |
+          cd backend
+          python manage.py migrate
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
