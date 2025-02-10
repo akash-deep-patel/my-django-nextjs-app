@@ -20,7 +20,7 @@ DATABASES = {
         'NAME': 'doc-appointment-database',
         'USER': 'emlfhhciqw',
         'PASSWORD': '$DcHj4c9PNCZ4fbS',
-        'HOST': 'doc-appointment',
+        'HOST': 'doc-appointment-server.postgres.database.azure.com',
         'PORT': '',
     },
 }
