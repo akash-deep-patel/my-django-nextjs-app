@@ -21,9 +21,11 @@ DATABASES = {
         'USER': 'emlfhhciqw',
         'PASSWORD': '$DcHj4c9PNCZ4fbS',
         'HOST': 'doc-appointment-server.postgres.database.azure.com',
-        'PORT': '',
+        'PORT': '5432',
+        'sslmode':'require'
     },
 }
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
