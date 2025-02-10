@@ -17,10 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'doc-appointment-server.postgres.database.azure.com',
+        'NAME': 'doc-appointment-database',
         'USER': 'emlfhhciqw',
         'PASSWORD': '$DcHj4c9PNCZ4fbS',
-        'HOST': 'doc-appointment-server.postgres.database.azure.com',
+        'HOST': 'doc-appointment',
         'PORT': '',
     },
 }
