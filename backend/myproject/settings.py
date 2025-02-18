@@ -31,9 +31,9 @@ DATABASES = {
         # 'HOST': CONNECTION_dict['host'],
         # 'PORT': CONNECTION_dict['port'],
         'NAME': 'postgres',
-        'USER': 'doc@doc-appointment-flex',
+        'USER': 'doc',
         'PASSWORD': 'surya2az*',
-        'HOST': 'doc-appointment.postgres.database.azure.com',
+        'HOST': 'doc-appointment-flex.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS': {'sslmode': 'require'}
     },
