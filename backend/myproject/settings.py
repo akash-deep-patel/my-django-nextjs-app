@@ -1,10 +1,10 @@
 
 from pathlib import Path
-
+import os
 
 from django.core.management.utils import get_random_secret_key
 
-SECRET_KEY = get_random_secret_key()
+SECRET_KEY = os.environ.get('SECRET_KEY', get_random_secret_key())
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 # DATABASES = {
@@ -13,16 +13,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #         'NAME': BASE_DIR / "db.sqlite3",
 #     }
 # }
+AZURE_POSTGRESQL_CONNECTIONSTRING = os.environ.get('AZURE_POSTGRESQL_CONNECTIONSTRING')
+
+CONNECTION_dict = {key_val.split('=')[0]:key_val.split('=')[1] for key_val in AZURE_POSTGRESQL_CONNECTIONSTRING.split()}
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'doc-appointment-database',
-        'USER': 'emlfhhciqw',
-        'PASSWORD': '$DcHj4c9PNCZ4fbS',
-        'HOST': 'doc-appointment-server.postgres.database.azure.com',
-        'PORT': '5432',
-        'sslmode':'require'
+        'NAME': CONNECTION_dict['dbname'],
+        'USER': CONNECTION_dict['user'],
+        'PASSWORD': CONNECTION_dict['password'],
+        'HOST': CONNECTION_dict['host'],
+        'PORT': CONNECTION_dict['port'],
+        'sslmode':CONNECTION_dict['sslmode'],
     },
 }
 
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -94,11 +98,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 import os
 
@@ -121,6 +124,8 @@ TEMPLATES = [
 # ...existing code...
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp', 'static')]
 
 CREDS_FILE_PATH = os.path.join(BASE_DIR, 'myapp', 'creds', 'google_api_credentials.json')
