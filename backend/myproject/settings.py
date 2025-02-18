@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #         'NAME': BASE_DIR / "db.sqlite3",
 #     }
 # }
-AZURE_POSTGRESQL_CONNECTIONSTRING = os.environ.get('AZURE_POSTGRESQL_CONNECTIONSTRING')
+AZURE_POSTGRESQL_CONNECTIONSTRING = os.environ.get('AZURE_POSTGRESQL_CONNECTIONSTRING',"dbname=doc-appointment-database host=doc-appointment-server.postgres.database.azure.com port=5432 sslmode=require user=jofpqvbvme password=hcxqp3TrzC$Yn58i")
 
 CONNECTION_dict = {key_val.split('=')[0]:key_val.split('=')[1] for key_val in AZURE_POSTGRESQL_CONNECTIONSTRING.split()}
 
