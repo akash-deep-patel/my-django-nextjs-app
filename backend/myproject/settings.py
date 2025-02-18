@@ -13,27 +13,27 @@ CSRF_TRUSTED_ORIGINS = [
                                              'doc-appointment-d0gagjbgfpe4gdbt.southeastasia-01.azurewebsites.net'),
 ]
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
+    }
+}
 AZURE_POSTGRESQL_CONNECTIONSTRING = os.environ.get('AZURE_POSTGRESQL_CONNECTIONSTRING',"dbname=doc-appointment-database host=doc-appointment-server.postgres.database.azure.com port=5432 sslmode=require user=jofpqvbvme password=hcxqp3TrzC$Yn58i")
 
 CONNECTION_dict = {key_val.split('=')[0]:key_val.split('=')[1] for key_val in AZURE_POSTGRESQL_CONNECTIONSTRING.split()}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': CONNECTION_dict['dbname'],
-        'USER': CONNECTION_dict['user'],
-        'PASSWORD': CONNECTION_dict['password'],
-        'HOST': CONNECTION_dict['host'],
-        'PORT': CONNECTION_dict['port'],
-        'sslmode':CONNECTION_dict['sslmode'],
-    },
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': CONNECTION_dict['dbname'],
+#         'USER': CONNECTION_dict['user'],
+#         'PASSWORD': CONNECTION_dict['password'],
+#         'HOST': CONNECTION_dict['host'],
+#         'PORT': CONNECTION_dict['port'],
+#         'sslmode':CONNECTION_dict['sslmode'],
+#     },
+# }
 
 
 INSTALLED_APPS = [
