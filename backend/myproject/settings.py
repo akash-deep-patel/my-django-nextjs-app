@@ -31,7 +31,7 @@ CONNECTION_dict = {key_val.split('=')[0]:key_val.split('=')[1] for key_val in AZ
 #         'PASSWORD': CONNECTION_dict['password'],
 #         'HOST': CONNECTION_dict['host'],
 #         'PORT': CONNECTION_dict['port'],
-#         'sslmode':CONNECTION_dict['sslmode'],
+#         'OPTIONS': {'sslmode': 'require'}
 #     },
 # }
 
