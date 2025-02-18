@@ -30,7 +30,7 @@ DATABASES = {
         # 'PASSWORD': CONNECTION_dict['password'],
         # 'HOST': CONNECTION_dict['host'],
         # 'PORT': CONNECTION_dict['port'],
-        'NAME': 'doc-appointment',
+        'NAME': 'django',
         'USER': 'doc@doc-appointment',
         'PASSWORD': 'surya2az*',
         'HOST': 'doc-appointment.postgres.database.azure.com',
