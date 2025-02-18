@@ -6,7 +6,7 @@
     <title>Patient Login</title>
 </head>
 <body>
-    <h1>Welcome, {{doctor.name}}</h1>
+    <h1>Welcome, {{ doctor.name|title }}</h1>
     <h2>Available Doctors:</h2>
     <ul>
         {% for patient in patients %}
