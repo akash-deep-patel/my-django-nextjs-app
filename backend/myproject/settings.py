@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', get_random_secret_key())
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 CSRF_TRUSTED_ORIGINS = [
-    os.environ.get('https://'+os.environ.get('WEBSITE_HOSTNAME')),
+    os.environ.get('https://'+os.environ.get('WEBSITE_HOSTNAME','doc-appointment-d0gagjbgfpe4gdbt.southeastasia-01.azurewebsites.net')),
 ]
 
 # DATABASES = {
