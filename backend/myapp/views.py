@@ -122,7 +122,7 @@ def schedule_appointment(request):
 
         doctor = Doctor.objects.get(id=doctor_id)
         patient = Patient.objects.get(id=patient_id)
-        doctor.phone = '955265798'
+        doctor.phone = '9555265798'
         # Generate WhatsApp meeting link
         whatsapp_message = f"Appointment with Dr. {doctor.name} on {appointment_time}. Please confirm."
         whatsapp_link = f"https://wa.me/{doctor.phone}?text={requests.utils.quote(whatsapp_message)}"
