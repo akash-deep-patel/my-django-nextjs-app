@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Login</title>
+    <title>Doctor Login</title>
 </head>
 <body>
     <h1>Welcome, {{ doctor.name|title }}</h1>
-    <h2>Available Doctors:</h2>
+    <h2>Available Patients:</h2>
     <ul>
         {% for patient in patients %}
             <li>{{ patient.name }} - {{ patient.age }}</li>

@@ -126,7 +126,12 @@ def schedule_appointment(request):
         # Generate WhatsApp meeting link
         whatsapp_message = f"Appointment with Dr. {doctor.name} on {appointment_time}. Please confirm."
         whatsapp_link = f"https://wa.me/{doctor.phone}?text={requests.utils.quote(whatsapp_message)}"
-
+        appointment = Appointment(
+            doctor=doctor,
+            patient=patient,
+            appointment_time=appointment_time
+        )
+        appointment.save()
         return render(request, 'appointment_confirmation.html', {'whatsapp_link': whatsapp_link})
 
     return render(request, 'schedule_appointment.html')
