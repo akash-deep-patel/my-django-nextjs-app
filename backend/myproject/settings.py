@@ -32,7 +32,7 @@ DATABASES = {
         # 'PORT': CONNECTION_dict['port'],
         'NAME': 'postgres',
         'USER': 'doc',
-        'PASSWORD': 'surya2az*',
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': 'doc-appointment-flex.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS': {'sslmode': 'require'}
