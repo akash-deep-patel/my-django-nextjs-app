@@ -26,7 +26,7 @@ class Patient(models.Model):
 class Appointment(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    appointment_date = models.DateTimeField()
+    appointment_time = models.DateTimeField()
     is_online = models.BooleanField(default=False)
 
     def __str__(self):
